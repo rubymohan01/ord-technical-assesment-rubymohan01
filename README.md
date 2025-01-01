@@ -7,6 +7,7 @@ We're thrilled to have you on board and can't wait to see the amazing work you'l
 - *CLONE DO NOT FORK* this project
 - Create a new Repository on your own Github account
 - Set the project as a *private* project.
+- Use your own Github Repo for this Assessement.
 - Invite these two users `neohunter` and `misterhtmlcss` *immediately* to the repo who are the reviewers of your assessment
 - Notify the hiring manager that the reviewers have been invited
 - You are ready to go! Continue below with the assessment.
