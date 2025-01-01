@@ -1,4 +1,4 @@
-# ORD Development Assessment
+# Development Assessment
 
 A warm welcome to the assessment! We're thrilled to have you on board and can't wait to see the amazing work you'll do. We're here to support you throughout this process, and we're excited to review your contributions.
 
