@@ -97,6 +97,7 @@ The application is an **insurance management platform** designed to streamline t
     - **Rails 8**.x
     - **Minitest \+ Capybara**
     - **PostgreSQL**
+    - **TailwindCSS**
 - If you propose using other technologies or have objections to any of the above, provide detailed reasons and alternatives.
 
 ## Deliverables
