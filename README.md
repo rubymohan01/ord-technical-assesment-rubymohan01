@@ -22,7 +22,7 @@ Design and develop a partial implementation of a Health platform, focusing on co
 
 The application is an **insurance management platform** designed to streamline the relationship between health insurance **companies**, and their **employees**. The platform provides tools for brokers to manage policies, employee enrollments, and communication with companies. It also enables HR representatives to oversee employee data, enrollment status, and policy selections, while offering employees a seamless way to access and manage their health insurance plans. The platform emphasizes interactivity, automation, and ease of use through features like authentication, CRUD operations, and integration with scheduling tools like Calendly.
 
-**Figma Design: **https://whimsical.com/figma-designs-JgMGMT336rUwfiHovB8VAV
+**Figma Design:** https://whimsical.com/figma-designs-JgMGMT336rUwfiHovB8VAV
 
 **Entity Descriptions**
 
@@ -64,7 +64,7 @@ The application is an **insurance management platform** designed to streamline t
         - **Agency**
         - **Companies**
         - **Employees**
-        - **Policies **
+        - **Policies**
 6. **Employee CSV importer**
     - Should support progress bar and validate data.
 7. **Frontend**
