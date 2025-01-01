@@ -4,9 +4,11 @@ We're thrilled to have you on board and can't wait to see the amazing work you'l
 
 ## Setup
 
-- Fork this project as a *private* project. 
+- *CLONE DO NOT FORK* this project
+- Create a new Repository on your own Github account
+- Set the project as a *private* project.
 - Invite these two users `neohunter` and `misterhtmlcss` *immediately* to the repo who are the reviewers of your assessment
-- Submit the repo URL to your manager.
+- Notify the hiring manager that the reviewers have been invited
 - You are ready to go! Continue below with the assessment.
 
 
