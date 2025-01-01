@@ -1,8 +1,13 @@
 # Developer Assessment
 
-A warm welcome to the assessment! We're thrilled to have you on board and can't wait to see the amazing work you'll do. We're here to support you throughout this process, and we're excited to review your contributions.
+We're thrilled to have you on board and can't wait to see the amazing work you'll do. We're here to support you throughout this process, and we're excited to review your contributions.
 
-To start, you will need to fork this project as a private project. Please invite the users `neohunter` and `misterhtmlcss`, who are the reviewers of your assessment, then follow the next instructions.
+## Setup
+
+- Fork this project as a *private* project. 
+- Invite these two users `neohunter` and `misterhtmlcss` *immediately* to the repo who are the reviewers of your assessment
+- Submit the repo URL to your manager.
+- You are ready to go! Continue below with the assessment.
 
 
 ## Objective
