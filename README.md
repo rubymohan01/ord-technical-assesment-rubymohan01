@@ -4,7 +4,7 @@
 
 We're thrilled to have you on board and can't wait to see the amazing work you'll do. We're here to support you throughout this process, and we're excited to review your contributions.
 
-## Setup (pay close attention to detail)
+## Setup (pay close attention to the details)
 
 - *CLONE DO NOT FORK* this project
 - Create a new Repository on your own Github account
