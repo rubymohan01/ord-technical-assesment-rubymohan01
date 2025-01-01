@@ -26,32 +26,32 @@ The application is an **insurance management platform** designed to streamline t
 
 **Entity Descriptions**
 
-**Admin: **Responsible for managing the overall platform, setting up brokers, and overseeing activities. They have full permissions to configure the platform and monitor performance.
+**Admin:** Responsible for managing the overall platform, setting up brokers, and overseeing activities. They have full permissions to configure the platform and monitor performance.
 
-**Agency: **Represents the intermediary organization that manages brokers and their agents.
+**Agency:** Represents the intermediary organization that manages brokers and their agents.
 
-**Agent: **Works under an agency. Agents assist companies and employees with policy selection, enrollment, and ongoing support.
+**Agent:** Works under an agency. Agents assist companies and employees with policy selection, enrollment, and ongoing support.
 
-**Companies: **Businesses that provide health insurance benefits to their employees. Each company has a designated PoC \(such as an HR representative\) who manages employee data and coordinates with agents.
+**Companies:** Businesses that provide health insurance benefits to their employees. Each company has a designated PoC \(such as an HR representative\) who manages employee data and coordinates with agents.
 
-**Employees: **Individuals working for companies who are enrolled in health insurance policies. They interact with the platform to view policy details, add dependents, and manage their health insurance.
+**Employees:** Individuals working for companies who are enrolled in health insurance policies. They interact with the platform to view policy details, add dependents, and manage their health insurance.
 
-**Policies: **Health insurance plans offered to employees. Policies are associated with specific companies and managed by agents to ensure proper enrollment and coverage.
+**Policies:** Health insurance plans offered to employees. Policies are associated with specific companies and managed by agents to ensure proper enrollment and coverage.
 
 ## Tasks
 
 ### Development Tasks
 
-1. **Discovery and Refinement **
+1. **Discovery and Refinement**
     - Create a list of questions, doubts, concerns, suggestions etc as your own discovery and refinement process in order to kickoff the project. Make sure you have all the necessary requirements to start development.
-2. **Estimation table **
+2. **Estimation table**
     - Before starting coding, first create an estimation table for the following items and submit them to your manager.
 3. **Database Design**
     - Design the database for postgresql including the following entities and all of their relationships:
         - **Admin**
-        - **Agency **\(including PoC - Point of Contact\)
-        - **Agent **
-        - **Companies **\(including PoC - Point of Contact\)
+        - **Agency** \(including PoC - Point of Contact\)
+        - **Agent**
+        - **Companies** \(including PoC - Point of Contact\)
         - **Employees**
         - **Policies \(employees have policies that are are associated with their employer/company and a Agent\)**
     - Provide a document explaining your database design decisions.
