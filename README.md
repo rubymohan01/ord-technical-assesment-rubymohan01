@@ -7,7 +7,7 @@ We're thrilled to have you on board and can't wait to see the amazing work you'l
 ## Setup (pay close attention to the details)
 
 - *CLONE DO NOT FORK* this project
-- Create a new Repository on your own Github account
+- Create a new Repository on your own Github account, call it `ord-technical-assesment-your-username`
 - Set the project as a *private* project.
 - Use your own Github Repo for this Assessement.
 - Invite these two users `neohunter` and `misterhtmlcss` *immediately* to the repo who are the reviewers of your assessment
