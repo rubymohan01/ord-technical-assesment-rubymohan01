@@ -3,17 +3,22 @@ Rails.application.routes.draw do
 
   devise_for :contacts, path: '', path_names: {
     sign_in: 'sign_in', sign_out: 'sign_out'
-  }, controllers: { sessions: 'contacts/sessions' }
+  }
 
-  devise_for :admins, path: 'admins', path_names: {
+  devise_for :admins, path_names: {
     sign_in: 'sign_in', sign_out: 'sign_out'
   }, controllers: { sessions: 'admins/sessions' }
 
   root 'dashboard#index'
 
-  namespace :admin do
+  namespace :admins do
     get 'dashboard', to: 'dashboard#index'
   end
   get 'dashboard', to: 'dashboard#index'
+  
+  resources :companies
+  resources :agencies
+  resources :employees
+  resources :agents
 end
   
