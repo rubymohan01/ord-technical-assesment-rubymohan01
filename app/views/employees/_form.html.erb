@@ -1,0 +1,78 @@
+<%= turbo_frame_tag 'tab-content' do %>
+  <div class="p-4 shadow-xl">
+    <div class="flex w-full bg-gray-500 justify-between items-center">
+      <h2 class="text-lg text-center font-bold mb-4 px-5 py-5 text-white"><%= company.name %></h2>
+      <%= link_to 'Back', company_path(company), data: { turbo_stream: true, turbo_frame: 'tab-content' }, class: 'mr-5 rounded bg-white text-gray-500 h-[50px] px-3 py-3 font-bold' %>
+    </div>
+    <div class="flex justify-center py-10">
+      <%= form_with model: employee, url: employee.id.nil? ? employees_path : employee_path(employee), class: "w-3/4", data: { turbo_frame: 'tab-content' } do |f| %>
+        <%= f.hidden_field :company_id %>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="col-start-2">
+            <div class="mb-4">
+              <%= f.label :first_name, 'First Name', class: 'block text-gray-700' %>
+              <%= f.text_field :first_name, class: 'block w-full border border-gray-300 p-2 rounded' %>
+              <% if employee.errors[:first_name].any? %>
+                <p class="text-red-500 text-xs mt-1"><%= employee.errors[:first_name].first %></p>
+              <% end %>
+            </div>
+
+            <div class="mb-4">
+              <%= f.label :last_name, 'Last Name', class: 'block text-gray-700' %>
+              <%= f.text_field :last_name, class: 'block w-full border border-gray-300 p-2 rounded' %>
+              <% if employee.errors[:last_name].any? %>
+                <p class="text-red-500 text-xs mt-1"><%= employee.errors[:last_name].first %></p>
+              <% end %>
+            </div>
+
+            <div class="mb-4">
+              <%= f.label :email, 'Email', class: 'block text-gray-700' %>
+              <%= f.email_field :email, class: 'block w-full border border-gray-300 p-2 rounded' %>
+              <% if employee.errors[:email].any? %>
+                <p class="text-red-500 text-xs mt-1"><%= employee.errors[:email].first %></p>
+              <% end %>
+            </div>
+
+            <div class="mb-4">
+              <%= f.label :phone, 'Phone', class: 'block text-gray-700' %>
+              <%= f.telephone_field :phone, class: 'block w-full border border-gray-300 p-2 rounded' %>
+              <% if employee.errors[:phone].any? %>
+                <p class="text-red-500 text-xs mt-1"><%= employee.errors[:phone].first %></p>
+              <% end %>
+            </div>
+
+            <div class="mb-4">
+              <%= f.label :dob, 'Date of Birth', class: 'block text-gray-700' %>
+              <%= f.date_field :dob, class: 'block w-full border border-gray-300 p-2 rounded' %>
+              <% if employee.errors[:dob].any? %>
+                <p class="text-red-500 text-xs mt-1"><%= employee.errors[:dob].first %></p>
+              <% end %>
+            </div>
+
+            <div class="mb-4">
+              <%= f.label :job_title, 'Job Title', class: 'block text-gray-700' %>
+              <%= f.text_field :job_title, class: 'block w-full border border-gray-300 p-2 rounded' %>
+              <% if employee.errors[:job_title].any? %>
+                <p class="text-red-500 text-xs mt-1"><%= employee.errors[:job_title].first %></p>
+              <% end %>
+            </div>
+
+            <div class="mb-4">
+              <%= f.label :gender, 'Gender', class: 'block text-gray-700' %>
+              <%= f.select :gender, [['Male', 'male'], ['Female', 'female'], ['Other', 'other']], prompt: 'Select Gender', class: 'block w-full border border-gray-300 p-2 rounded' %>
+              <% if employee.errors[:gender].any? %>
+                <p class="text-red-500 text-xs mt-1"><%= employee.errors[:gender].first %></p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1">
+          <div class="text-center">
+            <%= link_to 'Cancel', company_path(company), data: { turbo_stream: true, turbo_frame: 'tab-content' }, class: 'bg-red-700 text-white px-4 py-2 rounded' %>
+            <%= f.submit 'Save', class: 'px-4 py-2 bg-blue-500 text-white rounded' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

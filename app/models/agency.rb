@@ -12,4 +12,8 @@ class Agency < ApplicationRecord
   validates :country, presence: true
   validates :zip, presence: true, format: { with: /\A[A-Za-z0-9]{5,10}\z/, message: "must be alphanumeric and between 5 to 10 characters long" }
   validates :website, allow_blank: true, format: { with: URI::DEFAULT_PARSER.make_regexp, message: "must be a valid URL" }
+
+  def full_address
+    [address_line_1, address_line_2, city, state, country, zip].compact.join(', ')
+  end
 end

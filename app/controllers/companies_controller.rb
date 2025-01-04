@@ -31,6 +31,11 @@ class CompaniesController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace("tab-content", partial: "companies/details", locals: { company: @company })
+      end
+    end
   end
 
   def create
