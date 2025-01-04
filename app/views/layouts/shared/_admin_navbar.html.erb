@@ -7,9 +7,13 @@
       </div>
       <div class="col-start-3 col-end-5 col-span-2">
         <div class="hidden md:flex justify-start space-x-4">
-          <%= button_to 'Companies', companies_path, method: :get, class: "text-white px-3 py-2 rounded-md text-sm font-medium #{current_page?(companies_path) ? 'bg-gray-700' : 'hover:bg-gray-700'}", data: { turbo_frame: 'tab-content' } %>
-          <%= button_to 'Agencies', agencies_path, method: :get, class: "text-white px-3 py-2 rounded-md text-sm font-medium #{current_page?(agencies_path) ? 'bg-gray-700' : 'hover:bg-gray-700'}", data: { turbo_frame: 'tab-content' } %>
+          <%= link_to 'Companies', companies_path, class: "text-white px-3 py-2 rounded-md text-sm font-medium", data: { turbo_stream: true, turbo_frame: 'tab-content' } %>
+          <%= link_to 'Agencies', agencies_path, class: "text-white px-3 py-2 rounded-md text-sm font-medium", data: { turbo_stream: true, turbo_frame: 'tab-content' } %>
         </div>
+      </div>
+
+      <div class="col-end-13">
+        <%= link_to 'Sign Out', destroy_admin_session_path, class: "text-white px-3 py-2 rounded-md text-sm font-medium", data: { turbo_method: :delete } %>
       </div>
 
       <div class="md:hidden">
@@ -23,8 +27,8 @@
 
     <div class="md:hidden hidden" data-menu-target="menu">
       <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-        <%= button_to 'Companies', companies_path, method: :get, class: "text-white px-3 py-2 rounded-md text-sm font-medium #{current_page?(companies_path) ? 'bg-gray-700' : 'hover:bg-gray-700'}", data: { turbo_frame: 'tab-content' } %>
-        <%= button_to 'Agencies', agencies_path, method: :get, class: "text-white px-3 py-2 rounded-md text-sm font-medium #{current_page?(agencies_path) ? 'bg-gray-700' : 'hover:bg-gray-700'}", data: { turbo_frame: 'tab-content' } %>
+        <%= link_to 'Companies', companies_path, class: "text-white px-3 py-2 rounded-md text-sm font-medium", data: { turbo_stream: true, turbo_frame: 'tab-content' } %>
+        <%= link_to 'Agencies', agencies_path, class: "text-white px-3 py-2 rounded-md text-sm font-medium", data: { turbo_stream: true, turbo_frame: 'tab-content' } %>
       </div>
     </div>
   </nav>

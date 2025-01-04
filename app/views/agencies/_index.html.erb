@@ -1,18 +1,23 @@
-<div class="p-4 shadow-xl">
-  <div class="flex w-full bg-gray-500 justify-between items-center">
-    <h2 class="text-lg text-center font-bold mb-4 px-5 py-5 text-white">AGENCIES</h2>
-    <button class="mr-5 bg-white text-gray-500 h-[50px] px-3 py-3 mt-30 font-bold">+ New Agency</button>
+<%= turbo_frame_tag 'tab-content' do %>
+  <div class="p-4 shadow-xl">
+    <div class="flex w-full bg-gray-500 justify-between items-center">
+      <h2 class="text-lg text-center font-bold mb-4 px-5 py-5 text-white">Agencies</h2>
+      <%= link_to '+ New Agency', new_agency_path, data: { turbo_stream: true, turbo_frame: 'tab-content' }, class: 'mr-5 bg-white text-gray-500 h-[50px] px-3 py-3 font-bold' %>
+    </div>
+    <table class="table-fixed w-full text-sm mt-5">
+      <thead>
+        <tr>
+          <th class="py-5">Name</th>
+          <th class="py-5">Email</th>
+          <th class="py-5">Phone</th>
+          <th class="py-5">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="agencies-list">
+        <% agencies.each do |agency|%>
+          <%= render 'agencies/agency', agency: agency %>
+        <% end %>
+      </tbody>
+    </table>
   </div>
-  <table class="table-fixed w-full text-sm mt-5">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </table>
-</div>
+<% end %>
