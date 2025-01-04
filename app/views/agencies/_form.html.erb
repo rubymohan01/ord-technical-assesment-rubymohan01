@@ -1,0 +1,141 @@
+<%= turbo_frame_tag 'tab-content' do %>
+  <div class="p-4 shadow-xl">
+    <div class="flex w-full bg-gray-500 justify-between items-center">
+      <h2 class="text-lg text-center font-bold mb-4 px-5 py-5 text-white">AGENCIES</h2>
+      <%= link_to 'Back', agencies_path, data: { turbo_stream: true, turbo_frame: 'tab-content' }, class: 'mr-5 rounded bg-white text-gray-500 h-[50px] px-3 py-3 font-bold' %>
+    </div>
+    <div class="flex justify-center py-10"> 
+    
+    <%= form_with model: agency, url: agency.id.nil? ? agencies_path : agency_path(agency), class: "w-3/4", data: { turbo_frame: 'tab-content' } do |f| %>
+        <div class="grid grid-cols-3 gap-4">
+          <div>
+            <div class="mb-4">
+              <%= f.label :name, 'Name', class: 'block text-gray-700' %>
+              <%= f.text_field :name, class: 'block w-full border border-gray-300 p-2 rounded' %>
+              <% if agency.errors[:name].any? %>
+                <p class="text-red-500 text-xs mt-1"><%= agency.errors[:name].first %></p>
+              <% end %>
+            </div>
+
+            <div class="mb-4">
+              <%= f.label :email, 'Email', class: 'block text-gray-700' %>
+              <%= f.email_field :email, class: 'block w-full border border-gray-300 p-2 rounded' %>
+              <% if agency.errors[:email].any? %>
+                <p class="text-red-500 text-xs mt-1"><%= agency.errors[:email].first %></p>
+              <% end %>
+            </div>
+
+            <div class="mb-4">
+              <%= f.label :phone, 'Phone', class: 'block text-gray-700' %>
+              <%= f.telephone_field :phone, class: 'block w-full border border-gray-300 p-2 rounded' %>
+              <% if agency.errors[:phone].any? %>
+                <p class="text-red-500 text-xs mt-1"><%= agency.errors[:phone].first %></p>
+              <% end %>
+            </div>
+
+            <div class="mb-4">
+              <%= f.label :website, 'Website', class: 'block text-gray-700' %>
+              <%= f.url_field :website, class: 'block w-full border border-gray-300 p-2 rounded' %>
+              <% if agency.errors[:website].any? %>
+                <p class="text-red-500 text-xs mt-1"><%= agency.errors[:website].first %></p>
+              <% end %>
+            </div>
+
+            <div class="mb-4">
+              <%= f.label :address_line_1, 'Address Line 1', class: 'block text-gray-700' %>
+              <%= f.text_field :address_line_1, class: 'block w-full border border-gray-300 p-2 rounded' %>
+              <% if agency.errors[:address_line_1].any? %>
+                <p class="text-red-500 text-xs mt-1"><%= agency.errors[:address_line_1].first %></p>
+              <% end %>
+            </div>
+
+            <div class="mb-4">
+              <%= f.label :address_line_2, 'Address Line 2', class: 'block text-gray-700' %>
+              <%= f.text_field :address_line_2, class: 'block w-full border border-gray-300 p-2 rounded' %>
+              <% if agency.errors[:address_line_2].any? %>
+                <p class="text-red-500 text-xs mt-1"><%= agency.errors[:address_line_2].first %></p>
+              <% end %>
+            </div>
+          </div>
+
+          <div>
+            <div class="mb-4">
+              <%= f.label :city, 'City', class: 'block text-gray-700' %>
+              <%= f.text_field :city, class: 'block w-full border border-gray-300 p-2 rounded' %>
+              <% if agency.errors[:city].any? %>
+                <p class="text-red-500 text-xs mt-1"><%= agency.errors[:city].first %></p>
+              <% end %>
+            </div>
+
+            <div class="mb-4">
+              <%= f.label :state, 'State', class: 'block text-gray-700' %>
+              <%= f.text_field :state, class: 'block w-full border border-gray-300 p-2 rounded' %>
+              <% if agency.errors[:state].any? %>
+                <p class="text-red-500 text-xs mt-1"><%= agency.errors[:state].first %></p>
+              <% end %>
+            </div>
+
+            <div class="mb-4">
+              <%= f.label :country, 'Country', class: 'block text-gray-700' %>
+              <%= f.text_field :country, class: 'block w-full border border-gray-300 p-2 rounded' %>
+              <% if agency.errors[:country].any? %>
+                <p class="text-red-500 text-xs mt-1"><%= agency.errors[:country].first %></p>
+              <% end %>
+            </div>
+
+            <div class="mb-4">
+              <%= f.label :zip, 'ZIP Code', class: 'block text-gray-700' %>
+              <%= f.text_field :zip, class: 'block w-full border border-gray-300 p-2 rounded' %>
+              <% if agency.errors[:zip].any? %>
+                <p class="text-red-500 text-xs mt-1"><%= agency.errors[:zip].first %></p>
+              <% end %>
+            </div>
+          </div>
+          <div>
+            <h2 class="font-bold text-center">Contact Information</h3>
+            <%= f.fields_for :contact do |contact_form| %>
+               <%= contact_form.hidden_field :id %>
+              <div class="mb-4">
+                <%= contact_form.label :first_name, 'First Name', class: 'block text-gray-700' %>
+                <%= contact_form.text_field :first_name, class: 'block w-full border border-gray-300 p-2 rounded' %>
+                <% if contact_form.object.errors[:first_name].any? %>
+                  <p class="text-red-500 text-xs mt-1"><%= contact_form.object.errors[:first_name].first %></p>
+                <% end %>
+              </div>
+        
+              <div class="mb-4">
+                <%= contact_form.label :last_name, 'Last Name', class: 'block text-gray-700' %>
+                <%= contact_form.text_field :last_name, class: 'block w-full border border-gray-300 p-2 rounded' %>
+                <% if contact_form.object.errors[:last_name].any? %>
+                  <p class="text-red-500 text-xs mt-1"><%= contact_form.object.errors[:last_name].first %></p>
+                <% end %>
+              </div>
+        
+              <div class="mb-4">
+                <%= contact_form.label :email, 'Email', class: 'block text-gray-700' %>
+                <%= contact_form.email_field :email, class: 'block w-full border border-gray-300 p-2 rounded' %>
+                <% if contact_form.object.errors[:email].any? %>
+                  <p class="text-red-500 text-xs mt-1"><%= contact_form.object.errors[:email].first %></p>
+                <% end %>
+              </div>
+        
+              <div class="mb-4">
+                <%= contact_form.label :phone, 'Phone', class: 'block text-gray-700' %>
+                <%= contact_form.telephone_field :phone, class: 'block w-full border border-gray-300 p-2 rounded' %>
+                <% if contact_form.object.errors[:phone].any? %>
+                  <p class="text-red-500 text-xs mt-1"><%= contact_form.object.errors[:phone].first %></p>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="grid grid-cols-1">
+          <div class="text-center">
+            <%= link_to 'Cancel', agencies_path, data: { turbo_stream: true, turbo_frame: 'tab-content' }, class: 'bg-red-700 text-white px-4 py-2 rounded' %>
+            <%= f.submit 'Save', class: 'px-4 py-2 bg-blue-500 text-white rounded' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

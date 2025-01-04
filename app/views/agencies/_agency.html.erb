@@ -1,0 +1,16 @@
+<tr id="agency_<%= agency.id %>" class="mb-4">
+  <td class="text-center"><%= agency.name %></td>
+  <td class="text-center"><%= agency.email %></td>
+  <td class="text-center"><%= agency.phone %></td>
+  <td class="flex justify-evenly">
+    <%= link_to edit_agency_path(agency), data: { turbo_stream: true, turbo_frame: 'tab-content' }, class: 'mr-5 bg-white text-gray-500 h-[50px] px-3 py-3 font-bold' do %>
+      <%= heroicon "eye", variant: :solid, options: { class: "h-6 w-6 text-blue-500" } %>
+    <% end %>
+    <%= link_to edit_agency_path(agency), data: { turbo_stream: true, turbo_frame: 'tab-content' }, class: 'mr-5 bg-white text-gray-500 h-[50px] px-3 py-3 font-bold' do %>
+      <%= heroicon "pencil", variant: :solid, options: { class: "h-6 w-6 text-blue-500" } %>
+    <% end %>
+    <%= link_to agency_path(agency), method: :delete, data: { turbo_method: :delete, turbo_stream: true, turbo_frame: 'tab-content' }, class: 'mr-5 bg-white text-gray-500 h-[50px] px-3 py-3 font-bold' do %>
+      <%= heroicon "trash", variant: :solid, options: { class: "h-6 w-6 text-blue-500" } %>
+    <% end %>
+  </td>
+</tr>
