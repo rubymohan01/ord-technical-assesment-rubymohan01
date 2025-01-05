@@ -1,11 +1,11 @@
 class Agency < ApplicationRecord
-  has_many :agents
+  has_many :agents, dependent: :destroy
   has_one :contact, as: :contactable, dependent: :destroy
   accepts_nested_attributes_for :contact, allow_destroy: true
 
   validates :name, presence: true, length: { minimum: 3, maximum: 100 }
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :phone, presence: true, length: { minimum: 10, maximum: 15 }, numericality: { only_integer: true }
+  validates :phone, presence: true, length: { minimum: 10, maximum: 15 }
   validates :address_line_1, presence: true
   validates :city, presence: true
   validates :state, presence: true

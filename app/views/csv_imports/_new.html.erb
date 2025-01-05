@@ -1,0 +1,19 @@
+<%= turbo_frame_tag "modal", class: "hidden fixed inset-0 z-50 flex items-center justify-center", data: { controller: "modal" } do %>
+  <div class="absolute inset-0 bg-gray-900 bg-opacity-50" data-action="click->modal#hide"></div>
+    <div class="relative bg-white rounded-lg shadow-xl p-6 w-[500px] z-10" data-modal-target="content">
+      <h2 class="text-lg font-bold mb-4">Import CSV</h2>
+      <%= form_with url: csv_imports_path, method: :post, local: false do |form| %>
+        <%= form.hidden_field :company_id, value: company_id%>
+        <div>
+          <label for="csv_file">Upload CSV:</label>
+          <%= form.file_field :file, required: true, id: "csv_file", data: { action: "csv-importer#fileChanged" } %>
+          <%= link_to 'Download Sample', '/sample_data.csv', download: "sample_employees_data.csv", class: "underline text-blue-500" %>
+        </div>
+        <div class="mt-4 flex justify-between">
+          <%= form.submit "Import", class: "bg-blue-500 text-white px-4 py-2 rounded" %>
+          <button type="button" data-action="click->modal#hide" class="bg-gray-500 text-white px-4 py-2 rounded">Cancel</button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

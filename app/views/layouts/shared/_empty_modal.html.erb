@@ -1,0 +1,5 @@
+<%= turbo_frame_tag "modal", class: "hidden fixed inset-0 z-50 flex items-center justify-center", data: { controller: "modal" } do %>
+  <div class="absolute inset-0 bg-gray-900 bg-opacity-50" data-action="click->modal#hide"></div>
+  <div class="relative bg-white rounded-lg shadow-xl p-6 w-[500px] z-10" data-modal-target="content">
+  </div>
+<% end %>

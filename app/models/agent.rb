@@ -5,7 +5,7 @@ class Agent < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
-  validates :phone, presence: true, length: { minimum: 10, maximum: 15 }, numericality: { only_integer: true }
+  validates :phone, presence: true, length: { minimum: 10, maximum: 15 }
   validates :dob, presence: true
   validates :ref_code, presence: true
   validates :gender, presence: true

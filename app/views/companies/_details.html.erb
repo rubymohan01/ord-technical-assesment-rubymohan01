@@ -1,5 +1,11 @@
 <%= turbo_frame_tag 'tab-content' do %>
   <div class="p-4 shadow-xl">
+    <%= turbo_stream_from "progress-container" %>
+
+    <div id="progress-container">
+      <%= render partial: "csv_imports/progress", locals: { progress: 0 } %>
+      <%= render partial: "csv_imports/success_message", locals: { message: "" } %>
+    </div>
     <div class="grid grid-cols-12 bg-gray-500 items-center">
       <h2 class="col-start-1 col-span-3 text-lg left font-bold mb-4 px-5 py-5 text-white"><%= "#{company.name}(#{company.email})"%>
         </br>
@@ -9,8 +15,10 @@
         </br>
         contact us: <span><%= company.phone %></span>
       </h2>
-      <%= link_to 'Back', companies_path, data: { turbo_stream: true, turbo_frame: 'tab-content' }, class: 'col-start-10 rounded mr-5 bg-white text-gray-500 h-[50px] px-3 py-3 font-bold' %>
-      <%= link_to '+ New Employee', new_employee_path(company_id: company.id), data: { turbo_stream: true, turbo_frame: 'tab-content' }, class: 'col-end-13 col-span-2 rounded mr-5 bg-white text-gray-500 h-[50px] px-3 py-3 font-bold' %>
+      <%= link_to "Refresh", company_path(company), data: { turbo_stream: true, turbo_frame: 'tab-content' }, class: 'col-end-8 mr-5 text-white h-[50px] px-3 py-3 font-bold'%>
+      <%= link_to "Import CSV", new_csv_import_path(company_id: company.id), data: { turbo_stream: true, turbo_frame: "modal" }, class: "col-end-9 bg-white text-gray-500 h-[50px] px-3 py-3 font-bold" %>
+      <%= link_to '+ New Employee', new_employee_path(company_id: company.id), data: { turbo_stream: true, turbo_frame: 'tab-content' }, class: 'col-start-10 col-span-2 rounded mr-5 bg-white text-gray-500 h-[50px] px-3 py-3 font-bold' %>
+      <%= link_to 'Back', companies_path, data: { turbo_stream: true, turbo_frame: 'tab-content' }, class: 'col-end-13 rounded mr-5 bg-white text-gray-500 h-[50px] px-3 py-3 font-bold' %>
     </div>
     <table class="table-fixed w-full text-sm mt-5">
       <thead>
@@ -29,4 +37,5 @@
       </tbody>
     </table>
   </div>
-  <% end %>
+  <%= render 'layouts/shared/empty_modal'%>
+<% end %>
