@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   resources :agencies
   resources :employees
   resources :agents
+  resources :csv_imports
 end
   

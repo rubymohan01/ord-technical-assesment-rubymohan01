@@ -6,7 +6,7 @@ class Company < ApplicationRecord
 
   validates :name, presence: true, length: { minimum: 3, maximum: 100 }
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
-  validates :phone, presence: true, length: { minimum: 10, maximum: 15 }, numericality: { only_integer: true }
+  validates :phone, presence: true, length: { minimum: 10, maximum: 15 }
   validates :address_line_1, presence: true
   validates :city, presence: true
   validates :state, presence: true
